@@ -1,7 +1,8 @@
 # Craft-HC
 
-It's Craft, but with vital improvements by yours truly:
-- added set.length() function to sets.lua; the devs never document their libs, so I could only assume its absence meant trying to use tables.length() would find a way to break it
+It's Craft, but with some vital improvements by yours truly:
+## Differences
+- added set.length() function to sets.lua; the devs never document their libs, so I could only assume its absence meant trying to use tables.length() would find a way to break it, even though Lua "objects" are just tables.
 - altered recipe list for consistency, prioritizing the most convenient versions of recipes over others, eg. leather using tea leaves before willow logs, ingots prioritizing ore over beastcoins and nuggets, etc.
 - properly named batch-processing recipes to differentiate them from the standard recipes
 - made the find function useful; you can now search for recipes by name or by ingredient
@@ -10,21 +11,8 @@ It's Craft, but with vital improvements by yours truly:
 - recipes use proper names rather than FFXI's horribly inconsistent abbreviations
 - those of you working on a shield can make Sets without the HQ crystals interfering
 
-## Conceivable questions:
-
-### Q: Why use the input item's name instead?
-A: For one thing, who's out here processing rocks/geodes/etc. hoping to get the lowest-tier result? For another, who has every possible result from a given rock memorized? And for a third, why should fixing a broken fishing rod be the default recipe for that rod, thus relegating actually crafting a new one to #2, when it can just be a different recipe?
-
-### Q: Why re-number recipes with multiple versions?
-A: Consistency and sensibility, mostly. There's no reason the recipes that use Beastcoins, which have to be farmed from mobs, should be #1 for ingots, especially when most ingots don't have Beastcoin recipes, and just use ores as their default. Nuggets are less efficient than ores, but they're almost as readily available; and since not all ingot recipes use them, but there are more ingots that use nuggets than Beastcoins, they get to be #2. Likewise, every type of leather can use Tea Leaves as an ingredient, but not every type can use Willow Logs, and leather batches can't use Willow Logs at all, so it makes no sense whatsoever to put the ones using Willow Logs as the #1 recipe under any circumstances. Doing it my way, you won't have to search for the right version of every recipe to find the one that matches the ingredients you want to use. You will still have to search for some of the more nonsensical ones, though; the few with 4+ variants don't have any rhyme or reason to them.
-
-### Q: You're expecting too much from the original creator.
-A: I expect creators not to make their end users do their jobs for them. The original creator scraped BGWiki for recipes and called it a day without even verifying them, let alone sorting them; and because he wanted to avoid a few moments of minor inconvenience during development by not even trying to put the recipes in a sensible order, we got to endure those moments of inconvenience every single time we wanted to do a lot of crafting. And since his search function was absolute pants, it was made even more inconvenient by having to sift through every result that included any mention of whatever item we were trying to make just to find the right recipe. If you claim something you made will make a task more convenient, but it instead adds enough additional inconvenience to offset its utility, you messed up.
-
-### Q: Why do you fork instead of submitting fixes?
-A: One, because if anybody I fork from was actually maintaining anything, they'd already have fixed the things I needed to fix. Two, because some of the addons I have to fix are officially-"supported" Windower addons, which means they'll just get clobbered arbitrarily by the launcher. Three, because I don't feel like learning how the system works; just pushing updates to my own repos is annoying enough. And last, because I really don't feel like interacting with people whose job I had to do for them, even if they haven't drifted off into the void by now.
-
-## Commands:
+## Instructions
+### Commands:
 (Copied straight from the script.)
 1.  help - Displays the command list.
 2.  repeat - Repeats synthesis (default 1) using the
@@ -81,7 +69,7 @@ A: One, because if anybody I fork from was actually maintaining anything, they'd
     packets are displayed in the chat log.
 15. hqcrystal - Toggle whether to use HQ Crystal
 
-Notes:
+### Notes:
   Make commands will automatically pull items from
   any available bags if they are not present in your
   inventory.  This includes all recipe ingredients
@@ -102,3 +90,20 @@ Notes:
   the short english name.  These are the ones
   displayed on FFXIAH. Recipes, however, use sensible
   names because FFXI's abbreviations are inconsistent.
+
+## Conceivable questions:
+
+### Q: Why use the input item's name instead?
+A: For one thing, who's out here processing rocks/geodes/etc. hoping to get the lowest-tier result? For another, who has every possible result from a given rock memorized? And for a third, why should fixing a broken fishing rod be the default recipe for that rod, thus relegating actually crafting a new one to #2, when it can just be a different recipe?
+
+### Q: Why re-number recipes with multiple versions?
+A: Consistency and sensibility, mostly. There's no reason the recipes that use Beastcoins, which have to be farmed from mobs, should be #1 for ingots, especially when most ingots don't have Beastcoin recipes, and just use ores as their default. Nuggets are less efficient than ores, but they're almost as readily available; and since not all ingot recipes use them, but there are more ingots that use nuggets than Beastcoins, they get to be #2. Likewise, every type of leather can use Tea Leaves as an ingredient, but not every type can use Willow Logs, and leather batches can't use Willow Logs at all, so it makes no sense whatsoever to put the ones using Willow Logs as the #1 recipe under any circumstances. Doing it my way, you won't have to search for the right version of every recipe to find the one that matches the ingredients you want to use. You will still have to search for some of the more nonsensical ones, though; the few with 4+ variants don't have any rhyme or reason to them.
+
+### Q: You're expecting too much from the original creator.
+A: I expect creators not to make their end users do their jobs for them. The original creator scraped BGWiki for recipes and called it a day without even verifying them, let alone sorting them; and because he wanted to avoid a few moments of minor inconvenience during development by not even trying to put the recipes in a sensible order, we got to endure those moments of inconvenience every single time we wanted to do a lot of crafting. And since his search function was absolute pants, it was made even more inconvenient by having to sift through every result that included any mention of whatever item we were trying to make just to find the right recipe. If you claim something you made will make a task more convenient, but it instead adds enough additional inconvenience to offset its utility, you messed up.
+
+### Q: Why do you do these passive-aggressive unauthorized forks instead of submitting fixes?
+A: One, because if anybody I fork from was actually maintaining anything, they'd already have fixed the things I needed to fix. Two, because some of the addons I have to fix are officially-"supported" Windower addons, which means they'll just get clobbered arbitrarily by the launcher. Three, because I don't feel like learning how the system works; just pushing updates to my own repos is annoying enough. And last, because I really don't feel like interacting with people whose job I had to do for them, even if they haven't drifted off into the void by now.
+
+## Known Issues
+- None so far
